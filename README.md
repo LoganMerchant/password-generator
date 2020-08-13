@@ -1,3 +1,14 @@
-# Password Generator Starter Code
+# Password Generator
 
-## Test
+## Languages Used
+* HTML
+* CSS
+* JavaScript
+
+## Purpose
+
+## Process
+
+## Link to Application
+
+## Screenshots
