@@ -24,19 +24,50 @@ var specialCharInfo = [
 // Functions
 var generatePassword = function() {
   window.alert("Welcome to the password generator!");
-  // return "Hello";
 
   var prompts = function() {
-    window.prompt("How many total characters does the password need to be? It may be between 8 and 128 characters in length.");
+    var lengthPrompt = window.prompt("How many total characters does the password need to be? It may be between 8 and 128 characters in length.");
+    if (lengthPrompt < 129 && lengthPrompt > 7) {
+      // input determines length of object
+    }
+    else {
+      window.alert("Please select a length between 8 and 128 characters for your password.");
+      return prompts();
+    }
 
-    window.confirm("Does the password need to include uppercase letters?");
+    var uppercasePrompt = window.confirm("Does the password need to include uppercase letters?");
+    if (uppercasePrompt) {
+      // add it to the password
+    }
+    else {
+      // don't add it to the password
+    }
 
-    window.confirm("Does the password need to include lowercase letters?");
+    var lowercasePrompt = window.confirm("Does the password need to include lowercase letters?");
+    if (lowercasePrompt) {
+      // add it to the password
+    }
+    else {
+      // don't add it to the password
 
-    window.confirm("Does the password need to include numeric values?");
+    }
 
-    window.confirm('Does the password need to include special characters, i.e. "!", "*", "&", etc.?');
+    var numericPrompt = window.confirm("Does the password need to include numeric values?");
+    if (numericPrompt) {
+    // add it to the password
+    }
+    else {
+    // don't add it to the password
 
+    }
+
+    var specialCharPrompt = window.confirm('Does the password need to include special characters, i.e. "!", "*", "&", etc.?');
+    if (specialCharPrompt) {
+    // add it to the password
+    }
+    else {
+    // don't add it to the password
+    }
   } 
 
   prompts();
