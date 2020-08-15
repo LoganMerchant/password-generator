@@ -35,41 +35,47 @@ var generatePassword = function() {
   window.alert("Welcome to the password generator!");
 
   var prompts = function() {
+
+    // Length Declaration
     var lengthPrompt = window.prompt("How many total characters does the password need to be? It may be between 8 and 128 characters in length.");
-    if (lengthPrompt < 129 && lengthPrompt > 7) {
+    if (lengthPrompt <= 128 && lengthPrompt >= 8) {
     }
     else {
       window.alert("Please select a length between 8 and 128 characters for your password.");
       return prompts();
     }
 
+    // Window Prompts
     var uppercasePrompt = window.confirm("Does the password need to include uppercase letters?");
-    if (uppercasePrompt) {
-      random(uppercaseAlphabetInfo);
-      console.log(random(uppercaseAlphabetInfo));
-    }
-
     var lowercasePrompt = window.confirm("Does the password need to include lowercase letters?");
-    if (lowercasePrompt) {
-      random(lowercaseAlphabetInfo);
-      console.log(random(lowercaseAlphabetInfo));
-    }
-
     var numericPrompt = window.confirm("Does the password need to include numeric values?");
-    if (numericPrompt) {
-      random(numericInfo);
-      console.log(random(numericInfo));
-    }
-
     var specialCharPrompt = window.confirm('Does the password need to include special characters, i.e. "!", "*", "&", etc.?');
-    if (specialCharPrompt) {
-      random(specialCharInfo);
-      console.log(random(specialCharInfo));
-    }
-  } 
 
+    // Character Generators
+    for (i = 0; i < lengthPrompt; i++) {
+      if (uppercasePrompt) {
+        random(uppercaseAlphabetInfo);
+        console.log(random(uppercaseAlphabetInfo));
+      }
+
+      if (lowercasePrompt) {
+        random(lowercaseAlphabetInfo);
+        console.log(random(lowercaseAlphabetInfo));
+      }
+
+      if (numericPrompt) {
+        random(numericInfo);
+        console.log(random(numericInfo));
+      }
+
+      if (specialCharPrompt) {
+        random(specialCharInfo);
+        console.log(random(specialCharInfo));
+      }
+    }
+  }
   prompts();
-  return "Success";
+  return "YES";
 }
 
 // Get references to the #generate element
