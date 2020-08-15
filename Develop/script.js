@@ -1,4 +1,3 @@
-// On button click, user is asked for password criteria.
 // When asked for criteria, user selects which to include.
   // Lenth of a password between 8 and 128 characters.
   // Ask which character types to include {
@@ -8,6 +7,8 @@
 // Show password on the page. 
 
 // Assignment code here
+
+// Arrays
 var alphabetInfo = [
   "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
 ];
@@ -20,6 +21,7 @@ var specialCharInfo = [
   " ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+","-",".","/",":",";","<","=",">","?","@","[", "]", "^", "_", '`', "{", "|", "}", "~"
 ];
 
+// Functions
 var generatePassword = function() {
   window.prompt("Welcome to the password generator! How many characters is this password supposed to be in length?");
   return "Hello";
