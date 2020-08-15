@@ -31,11 +31,6 @@ var random = function(x) {
   return value;
 }
 
-var randomUppercase = function(x) {
-  var value = x[Math.floor(Math.random() * x.length)].toUppercase();
-  return value;
-}
-
 var generatePassword = function() {
   window.alert("Welcome to the password generator!");
 
