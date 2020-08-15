@@ -9,7 +9,11 @@
 // Assignment code here
 
 // Arrays
-var alphabetInfo = [
+var uppercaseAlphabetInfo = [ 
+  "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+]
+
+var lowercaseAlphabetInfo = [
   "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
 ];
 
@@ -22,13 +26,22 @@ var specialCharInfo = [
 ];
 
 // Functions
+var random = function(x) {
+  var value = x[Math.floor(Math.random() * x.length)];
+  return value;
+}
+
+var randomUppercase = function(x) {
+  var value = x[Math.floor(Math.random() * x.length)].toUppercase();
+  return value;
+}
+
 var generatePassword = function() {
   window.alert("Welcome to the password generator!");
 
   var prompts = function() {
     var lengthPrompt = window.prompt("How many total characters does the password need to be? It may be between 8 and 128 characters in length.");
     if (lengthPrompt < 129 && lengthPrompt > 7) {
-      // input determines length of object
     }
     else {
       window.alert("Please select a length between 8 and 128 characters for your password.");
@@ -37,41 +50,31 @@ var generatePassword = function() {
 
     var uppercasePrompt = window.confirm("Does the password need to include uppercase letters?");
     if (uppercasePrompt) {
-      // add it to the password
-    }
-    else {
-      // don't add it to the password
+      random(uppercaseAlphabetInfo);
+      console.log(random(uppercaseAlphabetInfo));
     }
 
     var lowercasePrompt = window.confirm("Does the password need to include lowercase letters?");
     if (lowercasePrompt) {
-      // add it to the password
-    }
-    else {
-      // don't add it to the password
-
+      random(lowercaseAlphabetInfo);
+      console.log(random(lowercaseAlphabetInfo));
     }
 
     var numericPrompt = window.confirm("Does the password need to include numeric values?");
     if (numericPrompt) {
-    // add it to the password
-    }
-    else {
-    // don't add it to the password
-
+      random(numericInfo);
+      console.log(random(numericInfo));
     }
 
     var specialCharPrompt = window.confirm('Does the password need to include special characters, i.e. "!", "*", "&", etc.?');
     if (specialCharPrompt) {
-    // add it to the password
-    }
-    else {
-    // don't add it to the password
+      random(specialCharInfo);
+      console.log(random(specialCharInfo));
     }
   } 
 
   prompts();
-  return "Success"
+  return "Success";
 }
 
 // Get references to the #generate element
