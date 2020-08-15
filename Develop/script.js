@@ -1,5 +1,13 @@
-// Assignment code here
+// On button click, user is asked for password criteria.
+// When asked for criteria, user selects which to include.
+  // Lenth of a password between 8 and 128 characters.
+  // Ask which character types to include {
+    // (e.g lowercase, uppercase, numeric, and/or special characters? }
+  // After each promt, inputs should be validated and at least one charcter type must be selected.
+// Generate the password to match criteria.
+// Show password on the page. 
 
+// Assignment code here
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
