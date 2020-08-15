@@ -23,8 +23,24 @@ var specialCharInfo = [
 
 // Functions
 var generatePassword = function() {
-  window.prompt("Welcome to the password generator! How many characters is this password supposed to be in length?");
-  return "Hello";
+  window.alert("Welcome to the password generator!");
+  // return "Hello";
+
+  var prompts = function() {
+    window.prompt("How many total characters does the password need to be? It may be between 8 and 128 characters in length.");
+
+    window.confirm("Does the password need to include uppercase letters?");
+
+    window.confirm("Does the password need to include lowercase letters?");
+
+    window.confirm("Does the password need to include numeric values?");
+
+    window.confirm('Does the password need to include special characters, i.e. "!", "*", "&", etc.?');
+
+  } 
+
+  prompts();
+  return "Success"
 }
 
 // Get references to the #generate element
