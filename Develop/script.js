@@ -25,6 +25,22 @@ var specialCharInfo = [
   " ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+","-",".","/",":",";","<","=",">","?","@","[", "]", "^", "_", '`', "{", "|", "}", "~"
 ];
 
+// var charSets = [ 
+//   {
+//     type: "lowercase",
+//     value: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+//   },
+//   {
+//     uppercase: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+//   },
+//   {
+//     numeric: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+//   },
+//   {
+//     special: [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+","-",".","/",":",";","<","=",">","?","@","[", "]", "^", "_", '`', "{", "|", "}", "~"]
+//   }
+// ]
+
 // Functions
 var random = function(x) {
   var value = x[Math.floor(Math.random() * x.length)];
@@ -75,7 +91,7 @@ var generatePassword = function() {
     }
   }
   prompts();
-  return "YES";
+  return ;
 }
 
 // Get references to the #generate element
