@@ -22,3 +22,6 @@ I feel much more confident with JavaScript after this challenge than I did befor
 [Password Generator](https://loganmerchant.github.io/password-generator/)
 
 ## Screenshots
+[./Develop/assets/images/screenshot-1.png]
+[./Develop/assets/images/screenshot-2.png]
+[./Develop/assets/images/screenshot-3.png]
