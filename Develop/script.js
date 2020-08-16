@@ -25,7 +25,11 @@ var specialCharInfo = [
   " ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+","-",".","/",":",";","<","=",">","?","@","[", "]", "^", "_", '`', "{", "|", "}", "~"
 ];
 
+var passwordInfo = [
+]
+
 var passwordValue = [
+
 ]
 
 // var charSets = [ 
@@ -51,6 +55,8 @@ var random = function(x) {
 }
 
 var generatePassword = function() {
+  passwordValue = [];
+  passwordInfo = [];
   window.alert("Welcome to the password generator!");
 
   var prompts = function() {
@@ -71,33 +77,39 @@ var generatePassword = function() {
     var specialCharPrompt = window.confirm('Does the password need to include special characters, i.e. "!", "*", "&", etc.?');
 
     // Character Generators
-      for (i =0; i < lengthPrompt; i++) {
         if (uppercasePrompt) {
-          random(uppercaseAlphabetInfo);
-          passwordValue = passwordValue.concat(uppercaseAlphabetInfo);
-          console.log(passwordValue);
-        }
+          passwordInfo = passwordInfo.concat(uppercaseAlphabetInfo);
+          console.log(passwordInfo);
+        };
 
         if (lowercasePrompt) {
-          passwordValue = passwordValue.concat(lowercaseAlphabetInfo);
-          console.log(passwordValue);
-        }
+          passwordInfo = passwordInfo.concat(lowercaseAlphabetInfo);
+          console.log(passwordInfo);
+        };
 
         if (numericPrompt) {
-          passwordValue = passwordValue.concat(numericInfo);
-          console.log(passwordValue);
-        }
+          passwordInfo = passwordInfo.concat(numericInfo);
+          console.log(passwordInfo);
+        };
 
         if (specialCharPrompt) {
-          passwordValue = passwordValue.concat(specialCharInfo);
+          passwordInfo = passwordInfo.concat(specialCharInfo);
+          console.log(passwordInfo);
+        };
+
+        // passwordValue = toString.passwordValue;
+        
+        for (i =0; i < lengthPrompt; i++) {
+          passwordValue[i] = random(passwordInfo);
           console.log(passwordValue);
-        }
-      }
-    
-  }
+        };
+  } 
+
   prompts();
-  return "ugh";
-}
+  passwordValue.toString;
+  passwordValue = passwordValue.join("");
+  return passwordValue;
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
