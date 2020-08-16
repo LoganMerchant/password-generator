@@ -57,28 +57,28 @@ var generatePassword = function() {
       // Character Set Generators
       if (uppercasePrompt) {
         passwordInfo = passwordInfo.concat(uppercaseAlphabetInfo);
-        console.log(passwordInfo);
       };
 
       if (lowercasePrompt) {
         passwordInfo = passwordInfo.concat(lowercaseAlphabetInfo);
-        console.log(passwordInfo);
       };
 
       if (numericPrompt) {
         passwordInfo = passwordInfo.concat(numericInfo);
-        console.log(passwordInfo);
       };
 
       if (specialCharPrompt) {
         passwordInfo = passwordInfo.concat(specialCharInfo);
-        console.log(passwordInfo);
+      };
+
+      if (!uppercasePrompt && !lowercasePrompt && !numericPrompt && !specialCharPrompt) {
+        window.alert("Please select at least one character set for your password.")
+        prompts();
       };
       
       // Randomizer of User-defined Characters
       for (i =0; i < lengthPrompt; i++) {
         passwordValue[i] = random(passwordInfo);
-        console.log(passwordValue);
       };
   } 
 
