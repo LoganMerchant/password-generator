@@ -1,13 +1,3 @@
-// When asked for criteria, user selects which to include.
-  // Lenth of a password between 8 and 128 characters.
-  // Ask which character types to include {
-    // (e.g lowercase, uppercase, numeric, and/or special characters? }
-  // After each promt, inputs should be validated and at least one charcter type must be selected.
-// Generate the password to match criteria.
-// Show password on the page. 
-
-// Assignment code here
-
 // Arrays
 var uppercaseAlphabetInfo = [ 
   "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
@@ -29,39 +19,27 @@ var passwordInfo = [
 ]
 
 var passwordValue = [
-
 ]
-
-// var charSets = [ 
-//   {
-//     type: "lowercase",
-//     value: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-//   },
-//   {
-//     uppercase: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-//   },
-//   {
-//     numeric: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-//   },
-//   {
-//     special: [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+","-",".","/",":",";","<","=",">","?","@","[", "]", "^", "_", '`', "{", "|", "}", "~"]
-//   }
-// ]
 
 // Functions
 var random = function(x) {
   var value = x[Math.floor(Math.random() * x.length)];
   return value;
-}
+};
 
 var generatePassword = function() {
+
+  // Array Reset
   passwordValue = [];
   passwordInfo = [];
+
+  // Welcome
   window.alert("Welcome to the password generator!");
 
+  // Prompt Function
   var prompts = function() {
 
-    // Length Declaration
+    // User Declaration of Length
     var lengthPrompt = window.prompt("How many total characters does the password need to be? It may be between 8 and 128 characters in length.");
     if (lengthPrompt <= 128 && lengthPrompt >= 8) {
     }
@@ -70,41 +48,41 @@ var generatePassword = function() {
       return prompts();
     }
 
-    // Window Prompts
+    // User Character Generator Prompts
     var uppercasePrompt = window.confirm("Does the password need to include uppercase letters?");
     var lowercasePrompt = window.confirm("Does the password need to include lowercase letters?");
     var numericPrompt = window.confirm("Does the password need to include numeric values?");
     var specialCharPrompt = window.confirm('Does the password need to include special characters, i.e. "!", "*", "&", etc.?');
 
-    // Character Generators
-        if (uppercasePrompt) {
-          passwordInfo = passwordInfo.concat(uppercaseAlphabetInfo);
-          console.log(passwordInfo);
-        };
+      // Character Set Generators
+      if (uppercasePrompt) {
+        passwordInfo = passwordInfo.concat(uppercaseAlphabetInfo);
+        console.log(passwordInfo);
+      };
 
-        if (lowercasePrompt) {
-          passwordInfo = passwordInfo.concat(lowercaseAlphabetInfo);
-          console.log(passwordInfo);
-        };
+      if (lowercasePrompt) {
+        passwordInfo = passwordInfo.concat(lowercaseAlphabetInfo);
+        console.log(passwordInfo);
+      };
 
-        if (numericPrompt) {
-          passwordInfo = passwordInfo.concat(numericInfo);
-          console.log(passwordInfo);
-        };
+      if (numericPrompt) {
+        passwordInfo = passwordInfo.concat(numericInfo);
+        console.log(passwordInfo);
+      };
 
-        if (specialCharPrompt) {
-          passwordInfo = passwordInfo.concat(specialCharInfo);
-          console.log(passwordInfo);
-        };
-
-        // passwordValue = toString.passwordValue;
-        
-        for (i =0; i < lengthPrompt; i++) {
-          passwordValue[i] = random(passwordInfo);
-          console.log(passwordValue);
-        };
+      if (specialCharPrompt) {
+        passwordInfo = passwordInfo.concat(specialCharInfo);
+        console.log(passwordInfo);
+      };
+      
+      // Randomizer of User-defined Characters
+      for (i =0; i < lengthPrompt; i++) {
+        passwordValue[i] = random(passwordInfo);
+        console.log(passwordValue);
+      };
   } 
 
+  // Function Calls and Returned Password Structure
   prompts();
   passwordValue.toString;
   passwordValue = passwordValue.join("");
