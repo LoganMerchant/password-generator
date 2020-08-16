@@ -25,6 +25,9 @@ var specialCharInfo = [
   " ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+","-",".","/",":",";","<","=",">","?","@","[", "]", "^", "_", '`', "{", "|", "}", "~"
 ];
 
+var passwordValue = [
+]
+
 // var charSets = [ 
 //   {
 //     type: "lowercase",
@@ -68,30 +71,32 @@ var generatePassword = function() {
     var specialCharPrompt = window.confirm('Does the password need to include special characters, i.e. "!", "*", "&", etc.?');
 
     // Character Generators
-    for (i = 0; i < lengthPrompt; i++) {
-      if (uppercasePrompt) {
-        random(uppercaseAlphabetInfo);
-        console.log(random(uppercaseAlphabetInfo));
-      }
+      for (i =0; i < lengthPrompt; i++) {
+        if (uppercasePrompt) {
+          random(uppercaseAlphabetInfo);
+          passwordValue = passwordValue.concat(uppercaseAlphabetInfo);
+          console.log(passwordValue);
+        }
 
-      if (lowercasePrompt) {
-        random(lowercaseAlphabetInfo);
-        console.log(random(lowercaseAlphabetInfo));
-      }
+        if (lowercasePrompt) {
+          passwordValue = passwordValue.concat(lowercaseAlphabetInfo);
+          console.log(passwordValue);
+        }
 
-      if (numericPrompt) {
-        random(numericInfo);
-        console.log(random(numericInfo));
-      }
+        if (numericPrompt) {
+          passwordValue = passwordValue.concat(numericInfo);
+          console.log(passwordValue);
+        }
 
-      if (specialCharPrompt) {
-        random(specialCharInfo);
-        console.log(random(specialCharInfo));
+        if (specialCharPrompt) {
+          passwordValue = passwordValue.concat(specialCharInfo);
+          console.log(passwordValue);
+        }
       }
-    }
+    
   }
   prompts();
-  return ;
+  return "ugh";
 }
 
 // Get references to the #generate element
